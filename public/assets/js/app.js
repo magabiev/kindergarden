@@ -60,7 +60,6 @@ getAccordionParents.forEach((parent) => {
   });
 });
 
-
 const colorArray = [
   "#88DBFB",
   "#9FFFA2",
@@ -71,6 +70,7 @@ const colorArray = [
   "#69c86d",
   "#ffafc2",
 ];
+
 let exerciseData = [
   { id: 0, name: "Югалтулар", result: 3 },
   {

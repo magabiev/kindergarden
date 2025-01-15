@@ -1,11 +1,11 @@
-<!-- ---
-import { Section, Image } from "../../components/ui";
+---
+import { Section, Image } from "ui";
 import App from "../../App.astro";
-import DonutChart from "../../components/TheDonutChart.astro";
+import DonutChart from "@/components/TheDonutChart.astro";
 
 const sidebarList = [
-  { id: 0, title: "Күнегүләр", path: "/balance/exercises" },
-  { id: 1, title: "Категорияләр", path: "/balance/categories" },
+  { id: 0, title: "Күнегүләр", path: "/balance/teachers/exercises" },
+  { id: 1, title: "Категорияләр", path: "/balance/teachers/categories" },
 ];
 ---
 
@@ -27,7 +27,9 @@ const sidebarList = [
           <div class="balance__image">
             <Image src="page-2/chart.webp" />
           </div>
-          <div class="balance__title">Тәрбияченен күнегүләр буенча хисабы</div>
+          <div class="balance__title">
+            Тәрбияченен категорияләр буенча хисабы
+          </div>
         </div>
         <div class="balance__layout">
           <div class="balance__sidebar">
@@ -35,10 +37,13 @@ const sidebarList = [
             <ul class="balance__sidebar-list">
               {
                 sidebarList.map((item) => {
-                  if (item.id == 0) {
+                  if (item.id == 1) {
                     return (
-                      <li class="balance__sidebar-item active">
-                        <a href={item.path} class="balance__sidebar-link">
+                      <li class="balance__sidebar-item">
+                        <a
+                          href={item.path}
+                          class="balance__sidebar-link active"
+                        >
                           {item.title}
                         </a>
                       </li>
@@ -67,4 +72,4 @@ const sidebarList = [
       </div>
     </Section>
   </main>
-</App> -->
+</App>
