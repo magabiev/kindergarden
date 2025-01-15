@@ -3,13 +3,13 @@
   // position: fixed;
   // top: 0;
   // left: 0;
-  height: 200px;
+  height: 190px;
   width: 100%;
   transition: var(--transition-ease);
   z-index: 10;
 
   &__content {
-    padding: 50px 20px 25px;
+    padding: 40px 20px 25px;
     width: 100%;
     background: url("../img/header-bg.png") center/cover;
     display: flex;

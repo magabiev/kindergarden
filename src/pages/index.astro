@@ -4,27 +4,46 @@ import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
 ---
 
 <App title="Главная">
+  <Fragment slot="header">
+    <style is:inline>
+      body {
+        background: url("./assets/img/bg-3-2.png") center/cover no-repeat;
+      }
+    </style>
+  </Fragment>
   <main>
     <!-- Intro -->
     <Section name="intro">
-      <div class="page">
-        <div class="breadcrumb">
-          <ol class="breadcrumb-list">
-            <li>
-              <a href="#"><span>Баш</span></a>
-            </li>
-            <li>
-              <a href="#"><span>Күнегүләр</span></a>
-            </li>
-            <li class="active">
-              <a href="#" class="disabled">
-                <span>5 - 6 яшь</span>
-              </a>
-            </li>
-          </ol>
-        </div>
+      <div class="breadcrumb">
+        <ol class="breadcrumb-list">
+          <li>
+            <a href="#"><span>Баш</span></a>
+          </li>
+          <li class="active">
+            <a href="#"><span>Күнегүләр</span></a>
+          </li>
+        </ol>
+      </div>
 
-        <H1>Hello world</H1>
+      <div class="intro__content">
+        <H2>Балалар бакчасы өчен укыту системасы</H2>
+        <div class="intro__subtitle">баланың яшен сайлагыз:</div>
+        <div class="intro__list">
+          <a href="/exercises" class="intro__list-item item">
+            <div class="item__title">5 - 6 яшь</div>
+            <div class="item__content">
+              <Image src="intro/3.png" />
+              <span>Алга <br /> омтылу</span>
+            </div>
+          </a>
+          <a href="/exercises" class="intro__list-item item">
+            <div class="item__title">6 - 7 яшь</div>
+            <div class="item__content">
+              <Image src="intro/4.png" />
+              <span>Тиздән <br /> мәктәпкә</span>
+            </div>
+          </a>
+        </div>
       </div>
     </Section>
   </main>
