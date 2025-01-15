@@ -3,61 +3,11 @@ import { Section, Image, H4 } from "ui";
 import App from "../../App.astro";
 
 const sidebarList = [
-  { id: 0, title: "Күнегүләр", path: "/balance/teachers/exercises" },
-  { id: 1, title: "Категорияләр", path: "/balance/teachers/categories" },
+  { id: 0, title: "Күнегүләр", path: "/stats" },
+  { id: 1, title: "Категорияләр", path: "/stats/categories" },
 ];
 
 const timeRanges = ["Бүген", "Атна", "1 Ай", "3 Ай"];
-
-export const colorArray = [
-  "#88DBFB",
-  "#9FFFA2",
-  "#A2ACFF",
-  "#ffc08e",
-  "#ffef79",
-  "#51b59f",
-  "#69c86d",
-  "#ffafc2",
-];
-
-let exerciseData = [
-  { id: 0, name: "Югалтулар", result: 3 },
-  {
-    id: 1,
-    name: "Өстәмә рәт",
-    result: 1,
-  },
-  {
-    id: 2,
-    name: "Нәрсә авыррак?",
-    result: 2,
-  },
-  {
-    id: 3,
-    name: "Парны тап",
-    result: 1,
-  },
-  {
-    id: 4,
-    name: "Күләгәне тап",
-    result: 2,
-  },
-  {
-    id: 5,
-    name: "Күңелле исәп",
-    result: 1,
-  },
-  {
-    id: 6,
-    name: "Бала һәм әни",
-    result: 4,
-  },
-  {
-    id: 7,
-    name: "3 кадәр саныйбыз",
-    result: 1,
-  },
-];
 ---
 
 <App title="Хисаплар">
@@ -73,13 +23,15 @@ let exerciseData = [
           </li>
         </ol>
       </div>
-      <div class="page page-2">
+
+      <div class="page page-3">
         <div class="balance__header">
           <div class="balance__image">
             <Image src="page-2/chart.webp" />
           </div>
           <div class="balance__title">Тәрбияченен күнегүләр буенча хисабы</div>
         </div>
+
         <div class="balance__layout">
           <div class="balance__sidebar">
             <div class="balance__sidebar-title">Хисаплар</div>
@@ -87,6 +39,14 @@ let exerciseData = [
               {
                 sidebarList.map((item) => {
                   if (item.id == 0) {
+                    return (
+                      <li class="balance__sidebar-item">
+                        <a href={item.path} class="balance__sidebar-link ">
+                          {item.title}
+                        </a>
+                      </li>
+                    );
+                  } else {
                     return (
                       <li class="balance__sidebar-item">
                         <a
@@ -97,19 +57,12 @@ let exerciseData = [
                         </a>
                       </li>
                     );
-                  } else {
-                    return (
-                      <li class="balance__sidebar-item">
-                        <a href={item.path} class="balance__sidebar-link">
-                          {item.title}
-                        </a>
-                      </li>
-                    );
                   }
                 })
               }
             </ul>
           </div>
+
           <div class="balance__sidebar-content">
             <div class="balance__filters">
               <div class="range__filters">
@@ -146,31 +99,21 @@ let exerciseData = [
                 </div>
               </div>
             </div>
-            <div class="balance__charts">
-              <canvas class="balance__doughnut" id="chart-1"></canvas>
-              <div class="balance__list">
-                <H4
-                  >Гомуми саны: {
-                    exerciseData.reduce((sum, item) => sum + item.result, 0)
-                  } күнегү</H4
-                >
-                <ul>
-                  {
-                    exerciseData.map((item, index) => (
-                      <li class="balance__item">
-                        <div
-                          class="balance__item-color"
-                          style={{ backgroundColor: colorArray[index] }}
-                        />
-                        <div class="balance__item-name">{item.name}</div>
-                        <span> - </span>
-                        <div class="balance__item-result">
-                          {item.result} күнегү
-                        </div>
-                      </li>
-                    ))
-                  }
-                </ul>
+
+            <div class="categories__charts">
+              <div class="categories__chart">
+                <div class="categories__chart-title">Логика</div>
+                <div class="categories__chart-subtitle">
+                  Күнегүләр башкарылды: 4
+                </div>
+                <canvas class="doughnut" id="chart-2"></canvas>
+              </div>
+              <div class="categories__chart">
+                <div class="categories__chart-title">Игътибар һәм хәтер</div>
+                <div class="categories__chart-subtitle">
+                  Күнегүләр башкарылды: 5
+                </div>
+                <canvas class="doughnut" id="chart-3"></canvas>
               </div>
             </div>
           </div>

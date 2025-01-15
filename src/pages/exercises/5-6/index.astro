@@ -104,11 +104,55 @@ import { Section, Accordion, Image, Icon, H1, H2, H3, H4 } from "ui";
             <div class="card">
               <div class="card-title">Зур әйберне сайла</div>
 
+              <div class="card__list">
+                <div class="card__list-item">
+                  <Image src="page-2/1.svg" />
+                </div>
+                <div class="card__list-item">
+                  <Image src="page-2/2.png" />
+                </div>
+                <div class="card__list-item">
+                  <Image src="page-2/3.png" />
+                </div>
+              </div>
+
               <a href="#" class="btn">Дәвам итәргә</a>
             </div>
           </div>
 
-          <div class="result"></div>
+          <div class="result">
+            <div class="result__level">
+              <div class="result__level-title">Дәрәҗә</div>
+              <div class="flex-row">
+                <Image src="icons/star-filled.png" />
+                <Image src="icons/star-empty.png" />
+                <Image src="icons/star-empty.png" />
+              </div>
+            </div>
+
+            <div class="result__actions">
+              <Image src="icons/sound.svg" />
+              <Image src="icons/play.png" />
+            </div>
+
+            <div class="result__table">
+              <table>
+                <tr>
+                  <th colspan="2">Җаваплар</th>
+                </tr>
+                <tr>
+                  <td><Image src="icons/correct.svg" /></td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td><Image src="icons/wrong.svg" /></td>
+                  <td><span class="false">0</span></td>
+                </tr>
+              </table>
+            </div>
+
+            <Image class="result__image" src="aside.png" />
+          </div>
         </div>
       </div>
     </Section>

@@ -27,7 +27,7 @@
 
 :root {
   --primary: rgb(88, 183, 112);
-  --primary-light: #f4736b;
+  --primary-light: rgb(88, 183, 112, 0.2);
   --secondary: rgb(254, 225, 3, 0.4);
   --text-color: #000;
   --gray: #7c7c7c;
@@ -35,7 +35,7 @@
   --font-secondary: "Targo", sans-serif;
   --transition-ease: 0.3s ease;
   --transition-bezier: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  --content-width: 1060px;
+  --content-width: 1180px;
   --content-padding: 20px;
 }
 
