@@ -1,10 +1,66 @@
 body {
-  background-image: url("../img/bg-3-2.png");
+  background-image: url("../img/bg.png");
 }
 
 main {
   max-width: 100%;
   overflow: hidden;
+}
+
+.start {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+
+  &__img {
+    width: 325px;
+    transform: rotateY(180deg) translateY(80px);
+  }
+
+  &__box {
+    padding: 20px;
+    width: 665px;
+    height: 220px;
+    color: rgb(18, 163, 66);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    background-image: url('data:image/svg+xml,<svg width="173" height="56" viewBox="0 0 173 56" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.73679 0.5H168.321C169.18 0.5 170.003 0.841017 170.61 1.44803C171.217 2.05505 171.558 2.87834 171.558 3.73679V38.2158C171.558 39.0743 171.217 39.8976 170.61 40.5046C170.003 41.1116 169.18 41.4526 168.321 41.4526H40.2368C37.701 41.4526 35.2149 42.1551 33.0541 43.4821L15.3226 54.3711C14.8319 54.6724 14.2165 54.685 13.7139 54.4038C13.2113 54.1226 12.9 53.5917 12.9 53.0158V45.6894C12.9 44.5658 12.4536 43.4881 11.6591 42.6936C10.8645 41.899 9.78687 41.4526 8.66321 41.4526H3.73679C2.87834 41.4526 2.05505 41.1116 1.44803 40.5046C0.841018 39.8976 0.5 39.0743 0.5 38.2158V3.73679C0.5 2.87834 0.841018 2.05505 1.44803 1.44803C2.05505 0.841018 2.87834 0.5 3.73679 0.5Z" fill="white" stroke="%2358B770" stroke-width="0.5"/></svg>');
+    background-position: top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    transform: translateY(-200px) translateX(-100px);
+  }
+
+  .btn {
+    position: absolute;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 58px;
+    font-weight: 700;
+    background: var(--primary);
+    border-radius: 15px;
+    transform: translate(100px, 50px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      right: 50px;
+      width: 80px;
+      height: 80px;
+      background: url("../img/icons/hand.png") center/contain no-repeat;
+      pointer-events: none;
+    }
+  }
 }
 
 .intro {
@@ -183,7 +239,7 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 10px;
     }
 
