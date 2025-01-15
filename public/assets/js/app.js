@@ -27,3 +27,24 @@ if (startSection) {
     startSection.style.display = "none";
   });
 }
+
+const data = {
+  labels: ["Дерес җаваплар", "Дөрес булмаган җаваплар"],
+  datasets: [
+    {
+      data: [3, 1, 2, 1, 2, 1, 4, 1],
+      backgroundColor: ["#fc8a8a", "#ffd6d6"],
+    },
+  ],
+};
+document.addEventListener("DOMContentLoaded", () => {
+const ctx = document.getElementById(".chart-1").getContext("2d");
+const myChart = new Chart(ctx, {
+  type: "doughnut",
+  data: data,
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+  },
+});
+});
