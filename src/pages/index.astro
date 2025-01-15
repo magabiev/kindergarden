@@ -6,14 +6,27 @@ import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
 <App title="Главная">
   <Fragment slot="header">
     <div class="start">
-      <Image class="start__img" src="start.png" />
-      <div class="start__box">
-        Сәлам! Мин Батыр! <br />
-        Бу балалар бакчасы өчен укыту системасы! <br />
-        Белемнәрне бергәләп шатланып, уйнап алыйк! <br />
-        йдә әле, күнегүләрне эшләргә булыш миңа!
+      <div class="start__text">
+        <Image class="start__img" src="start.png" />
+        <div class="start__box">
+          Сәлам! Мин Батыр! <br />
+          Бу балалар бакчасы өчен укыту системасы! <br />
+          Белемнәрне бергәләп шатланып, уйнап алыйк! <br />
+          йдә әле, күнегүләрне эшләргә булыш миңа!
+        </div>
+        <div class="btn" role="button" tabindex="0" aria-label="start">
+          АЛГА!
+        </div>
       </div>
-      <div class="btn" role="button" tabindex="0" aria-label="start">АЛГА!</div>
+      <div class="start__select">
+        <H1>Кем булып керу?</H1>
+        <ul class="start__select-options">
+          <li class="start__select-option active">Воспитатель</li>
+          <li class="start__select-option">Родитель</li>
+          <li class="start__select-option">Управление образования</li>
+        </ul>
+        <div class="btn" role="button" tabindex="0">АЛГА</div>
+      </div>
     </div>
   </Fragment>
   <main>
