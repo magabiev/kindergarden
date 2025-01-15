@@ -27,24 +27,76 @@ if (startSection) {
     startSection.style.display = "none";
   });
 }
-
+const colorArray = [
+  "#88DBFB",
+  "#9FFFA2",
+  "#A2ACFF",
+  "#ffc08e",
+  "#ffef79",
+  "#51b59f",
+  "#69c86d",
+  "#ffafc2",
+];
+let exerciseData = [
+  { id: 0, name: "Югалтулар", result: 3 },
+  {
+    id: 1,
+    name: "Өстәмә рәт",
+    result: 1,
+  },
+  {
+    id: 2,
+    name: "Нәрсә авыррак?",
+    result: 2,
+  },
+  {
+    id: 3,
+    name: "Парны тап",
+    result: 1,
+  },
+  {
+    id: 4,
+    name: "Күләгәне тап",
+    result: 2,
+  },
+  {
+    id: 5,
+    name: "Күңелле исәп",
+    result: 1,
+  },
+  {
+    id: 6,
+    name: "Бала һәм әни",
+    result: 4,
+  },
+  {
+    id: 7,
+    name: "3 кадәр саныйбыз",
+    result: 1,
+  },
+];
+exerciseData = exerciseData.map((item, index) => {
+  return {
+    ...item,
+    color: colorArray[index],
+  };
+});
 const data = {
-  labels: ["Дерес җаваплар", "Дөрес булмаган җаваплар"],
   datasets: [
     {
-      data: [3, 1, 2, 1, 2, 1, 4, 1],
-      backgroundColor: ["#fc8a8a", "#ffd6d6"],
+      label: "Exercises",
+      data: exerciseData.map((item) => item.result),
+      backgroundColor: colorArray,
+      hoverOffset: 4,
     },
   ],
 };
-document.addEventListener("DOMContentLoaded", () => {
-const ctx = document.getElementById(".chart-1").getContext("2d");
-const myChart = new Chart(ctx, {
+
+const config = {
   type: "doughnut",
   data: data,
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-  },
-});
-});
+};
+
+const ctx = document.getElementById("chart-1");
+
+new Chart(ctx, config);
