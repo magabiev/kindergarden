@@ -375,9 +375,9 @@ main {
     }
 
     &__title {
-      font-size: 38px;
+      font-size: 46px;
       font-weight: 400;
-      font-family: "Targo Regular";
+      font-family: var(--font-secondary);
       color: #ababab;
     }
 
@@ -399,23 +399,30 @@ main {
       padding: 20px 10px;
       border-radius: 15px;
       border: 5px solid #f4f4f4;
+
       &-title {
         text-align: center;
         color: #ababab;
         margin-bottom: 20px;
       }
+
       &-item {
         a {
           display: block;
           padding: 6px 4px;
+          color: #00000060;
+          font-weight: 700;
           border-radius: 10px;
           background-color: #f4f4f4;
           margin-bottom: 8px;
+
           &.active {
+            color: #000;
             background-color: #faf1bd !important;
           }
         }
       }
+
       &-content {
         padding-top: 20px;
         flex-grow: 1;
@@ -425,18 +432,21 @@ main {
 
     &__filters {
       margin-bottom: 20px;
+
       .time__filters {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        gap: 10px;
+        gap: 50px;
       }
+
       .range__filters {
+        margin-bottom: 15px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         gap: 10px;
-        margin-bottom: 10px;
+
         &-item {
           padding: 5px 20px;
           width: calc(100% / 4 - 10px);
@@ -457,14 +467,23 @@ main {
       flex-direction: column;
       align-items: flex-start;
       gap: 5px;
+
+      label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
       label,
       input,
       input::-webkit-calendar-picker-indicator {
         color: var(--primary);
       }
+
       input {
         width: 100%;
-        padding: 3px 0;
+        padding: 5px 3px 3px;
+        font-size: 15px;
         background-color: #f4f4f4;
         border-radius: 7px;
         border: 2px solid var(--primary);
@@ -475,6 +494,7 @@ main {
           width: 30px;
         }
       }
+
       .custom-date-icon {
         position: absolute;
         // display: none;
@@ -522,7 +542,6 @@ main {
       }
     }
   }
-
 }
 
 // @include show(".endoscopy");

@@ -9,10 +9,15 @@
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
-  font-family: "Targo Regular";
+  font-family: "Targo";
   src: url("../fonts/Targo-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
 @font-face {
   font-family: "Gagalin";
   src: url("../fonts/Gagalin-Regular.woff2") format("woff2");
@@ -28,7 +33,6 @@
   --gray: #7c7c7c;
   --font-primary: "Comfortaa", sans-serif;
   --font-secondary: "Targo", sans-serif;
-  --font-regular: "Targo Regualar", sans-serif;
   --transition-ease: 0.3s ease;
   --transition-bezier: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   --content-width: 1060px;
