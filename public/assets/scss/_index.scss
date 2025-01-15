@@ -1,14 +1,16 @@
+body {
+  background-image: url("../img/bg.png");
+}
+
 main {
+  // padding-top: 205px;
   max-width: 100%;
   overflow: hidden;
 }
 
-section {
-  padding: 50px 0;
-
-  @include media("lg") {
-    padding: 30px 0;
-  }
+.page {
+  min-height: calc(100vh - 200px);
+  background: #fff;
 }
 
 // @include show(".endoscopy");

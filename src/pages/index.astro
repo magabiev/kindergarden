@@ -1,13 +1,31 @@
 ---
 import App from "../App.astro";
-import { Section, Image, Icon, H1, H2, H3, H4} from "ui";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
 ---
 
 <App title="Главная">
   <main>
     <!-- Intro -->
     <Section name="intro">
-      <H1>Hello world</H1>
+      <div class="page">
+        <div class="breadcrumb">
+          <ol class="breadcrumb-list">
+            <li>
+              <a href="#"><span>Баш</span></a>
+            </li>
+            <li>
+              <a href="#"><span>Күнегүләр</span></a>
+            </li>
+            <li class="active">
+              <a href="#" class="disabled">
+                <span>5 - 6 яшь</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+
+        <H1>Hello world</H1>
+      </div>
     </Section>
   </main>
 </App>

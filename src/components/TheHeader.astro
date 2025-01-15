@@ -4,30 +4,44 @@ import { H2, Image, Icon } from "ui";
 
 <header class="header">
   <div class="container">
-    <a
-      href="/"
-      class="header__logo"
-      title="Команда по автоподбору №1 в Санкт-Петербурге"
-    >
-      <Image src="logo.svg" alt="logo" />
-      <div class="text-xs font-light">
-        Команда по автоподбору №1 <br />  в Санкт-Петербурге
-      </div>
-    </a>
+    <div class="header__content">
+      <div class="header__content-left">
+        <a href="/" class="header__logo">
+          <Image src="logo.png" alt="logo" />
+          <span> Саба муниципаль <br /> районы </span>
+        </a>
 
-    <nav class="header__menu">
-      <ul class="menu">
-        <li class="menu-item active"><a href="/">Главная</a></li>
-        <li class="menu-item menu-item-has-children">
-          <a href="/services">Услуги</a>
-          <ul class="sub-menu">
-            <li class="menu-item"><a href="#">Подбор новых авто</a></li>
-            <li class="menu-item"><a href="#">Эндоскопия</a></li>
-          </ul>
-        </li>
-        <li class="menu-item"><a href="/about">О нас</a></li>
-        <li class="menu-item"><a href="/contacts">Контакты</a></li>
-      </ul>
-    </nav>
+        <div class="header__name">Саба 6нчы «Балачак» балалар бакчасы</div>
+      </div>
+
+      <div class="header__content-right">
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a href="/">Баш</a>
+          </li>
+          <li class="header__menu-item active">
+            <a href="/">Күнегүләр</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="/">Уңышлар</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="/">Хисаплар</a>
+          </li>
+        </ul>
+
+        <div class="header__author">
+          <div class="header__author-info">
+            <span class="header__author-name">
+              Шәмсетдинова <br /> Айгөл Таһир кызы
+            </span>
+            <span class="header__author-role">Балалар бакчасы тәрбиячесе</span>
+          </div>
+          <div class="header__author-avatar">
+            <Image src="avatar.png" />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
