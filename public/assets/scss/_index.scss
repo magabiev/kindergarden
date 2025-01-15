@@ -373,15 +373,18 @@ main {
       align-items: center;
       gap: 20px;
     }
+    
     &__title {
       font-size: 38px;
       font-weight: 400;
       font-family: "Targo Regular";
       color: #ababab;
     }
+
     &__image {
       width: 140px;
     }
+
     &__layout {
       width: 100%;
       display: flex;
@@ -390,6 +393,7 @@ main {
       align-items: stretch;
       gap: 50px;
     }
+
     &__sidebar {
       width: 250px;
       padding: 20px 10px;
@@ -418,6 +422,7 @@ main {
         border-top: 5px solid #f4f4f4;
       }
     }
+
     &__filters {
       margin-bottom: 20px;
       .time__filters {
@@ -444,6 +449,7 @@ main {
         }
       }
     }
+
     &__time {
       width: 200px;
       position: relative;
@@ -491,10 +497,12 @@ main {
       align-items: center;
       gap: 50px;
     }
+
     &__doughnut {
       width: 50% !important;
       height: 50% !important;
     }
+
     &__list {
       width: 50%;
       margin-top: 20px;
@@ -502,6 +510,7 @@ main {
         margin-top: 20px;
       }
     }
+
     &__item {
       display: flex;
       margin-bottom: 10px;
