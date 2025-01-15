@@ -1,10 +1,11 @@
----
-import { Section, Image } from "../../../../components/ui";
-import App from "../../../../App.astro";
+<!DOCTYPE html>
+<!-- ---
+import { Section, Image } from "../../components/ui";
+import App from "../../App.astro";
 
 const sidebarList = [
-  { id: 0, title: "Күнегүләр", path: "/balance/teachers/exercises" },
-  { id: 1, title: "Категорияләр", path: "/balance/teachers/categories" },
+  { id: 0, title: "Күнегүләр", path: "/balance/exercises" },
+  { id: 1, title: "Категорияләр", path: "/balance/categories" },
 ];
 ---
 
@@ -26,7 +27,7 @@ const sidebarList = [
           <div class="balance__image">
             <Image src="page-2/chart.webp" />
           </div>
-          <div class="balance__title">Тәрбияченен категорияләр буенча хисабы</div>
+          <div class="balance__title">Тәрбияченен күнегүләр буенча хисабы</div>
         </div>
         <div class="balance__layout">
           <div class="balance__sidebar">
@@ -34,10 +35,10 @@ const sidebarList = [
             <ul class="balance__sidebar-list">
               {
                 sidebarList.map((item) => {
-                  if (item.id == 1) {
+                  if (item.id == 0) {
                     return (
-                      <li class="balance__sidebar-item">
-                        <a href={item.path} class="balance__sidebar-link active">
+                      <li class="balance__sidebar-item active">
+                        <a href={item.path} class="balance__sidebar-link">
                           {item.title}
                         </a>
                       </li>
@@ -60,9 +61,10 @@ const sidebarList = [
             <input id="date-start" type="date" value="2024-06-27" />
             <label for="date-end">Дата буенча:</label>
             <input id="date-end" type="date" value="2024-07-04" />
+            <DonutChart />
           </div>
         </div>
       </div>
     </Section>
   </main>
-</App>
+</App> -->
