@@ -8,8 +8,8 @@ const version = Math.random().toString(16).slice(10);
 
 const styles: string[] = [];
 const scripts: string[] = [
-  // "./assets/js/fancybox.min.js",
-  `./assets/js/app.js?v=${version}`,
+  "/assets/js/chartjs.min.js",
+  `/assets/js/app.js?v=${version}`,
 ];
 
 interface Props {
@@ -20,7 +20,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="kz">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />

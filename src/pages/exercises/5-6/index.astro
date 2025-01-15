@@ -1,0 +1,53 @@
+---
+import App from "../../../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+---
+
+<App title="Күнегү Югары һәм түбән">
+  <main>
+    <!-- Intro -->
+    <Section name="intro">
+      <div class="breadcrumb">
+        <ol class="breadcrumb-list">
+          <li>
+            <a href="/"><span>Баш</span></a>
+          </li>
+          <li>
+            <a href="#"><span>Күнегүләр</span></a>
+          </li>
+          <li>
+            <a href="#"><span>5 - 6 яшь</span></a>
+          </li>
+          <li class="active">
+            <a href="#" class="disabled">
+              <span>Югары һәм түбән</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+
+      <div class="page page-2">
+        <div class="wrapper">
+          <div class="aside">
+            <div class="aside__section">
+              <div class="aside__section-title">3 - 4 яшь</div>
+              <img src="" alt="" />
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="content-title">Күнегү "Югары һәм түбән"</div>
+
+            <div class="card">
+              <div class="card-title">Зур әйберне сайла</div>
+
+              <a href="#" class="btn">Дәвам итәргә</a>
+            </div>
+          </div>
+
+          <div class="result"></div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>
