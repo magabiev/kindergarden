@@ -1,5 +1,11 @@
 ---
 import { H2, Image, Icon } from "ui";
+
+interface Props {
+  template?: string;
+}
+
+const { template } = Astro.props;
 ---
 
 <header class="header">
@@ -11,7 +17,11 @@ import { H2, Image, Icon } from "ui";
           <span> Саба муниципаль <br /> районы </span>
         </a>
 
-        <div class="header__name">Саба 6нчы «Балачак» балалар бакчасы</div>
+        {
+          !template && (
+            <div class="header__name">Саба 6нчы «Балачак» балалар бакчасы</div>
+          )
+        }
       </div>
 
       <div class="header__content-right">
@@ -30,17 +40,34 @@ import { H2, Image, Icon } from "ui";
           </li>
         </ul>
 
-        <div class="header__author">
-          <div class="header__author-info">
-            <span class="header__author-name">
-              Шәмсетдинова <br /> Айгөл Таһир кызы
-            </span>
-            <span class="header__author-role">Балалар бакчасы тәрбиячесе</span>
-          </div>
-          <div class="header__author-avatar">
-            <Image src="avatar.png" />
-          </div>
-        </div>
+        {
+          !template && (
+            <div class="header__author">
+              <div class="header__author-info">
+                <span class="header__author-name">
+                  Шәмсетдинова <br /> Айгөл Таһир кызы
+                </span>
+                <span class="header__author-role">
+                  Балалар бакчасы тәрбиячесе
+                </span>
+              </div>
+              <div class="header__author-avatar">
+                <Image src="avatar.png" />
+              </div>
+            </div>
+          )
+        }
+
+        {
+          template && template == "2" && (
+            <div class="header__idara">
+              <div class="header__idara-text">
+                Саба муниципаль районы башкарма <br> комитетының м гариф идар се
+              </div>
+              <Image src="study.png" />
+            </div>
+          )
+        }
       </div>
     </div>
   </div>
