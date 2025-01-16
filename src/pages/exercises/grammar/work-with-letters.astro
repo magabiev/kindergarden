@@ -1,0 +1,41 @@
+---
+import { Section, Accordion, Image, Icon, H1, H2, H3, H4 } from "ui";
+import Exercice from "../../../components/TheExercise.astro";
+---
+
+<Exercice
+  page={3}
+  title="Өйдәге хәрефләр"
+  subtitle="Һәрбер йортка исемнәре бер үк хәреф белән башланган рәсемнәрне күчерегез"
+>
+  <div class="work-with-letters">
+    <ul class="houses">
+      <li>
+        <Image src="page-3/3.png" />
+        <span>с</span>
+      </li>
+      <li>
+        <Image src="page-3/4.png" />
+        <span>А</span>
+      </li>
+      <li>
+        <Image src="page-3/5.png" />
+        <span>П</span>
+      </li>
+    </ul>
+
+    <ul class="items">
+      {
+        Array.from({ length: 10 }, (_, index) => (
+          <li>
+            <div class="play" role="button">
+              <Image src="icons/sound.svg" />
+            </div>
+
+            <Image src={`page-3/${index + 6}.png`} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Exercice>

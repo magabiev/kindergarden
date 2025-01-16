@@ -55,13 +55,16 @@
     li {
       padding: 5px 10px;
       width: 100%;
-      color: rgb(254, 92, 148);
-      background: rgba(254, 234, 234, 0.6);
-      border-bottom: 2px solid rgb(254, 92, 148, 0.2);
+      color: var(--primary);
+      background: var(--primary-light);
+      border-bottom: 2px solid var(--primary-hover);
+      // color: rgb(254, 92, 148);
+      // background: rgba(254, 234, 234, 0.6);
+      // border-bottom: 2px solid rgb(254, 92, 148, 0.2);
       transition: var(--transition-ease);
 
       &:hover {
-        background: rgb(254, 234, 234);
+        background: var(--primary-hover);
       }
     }
   }

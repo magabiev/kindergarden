@@ -28,7 +28,7 @@ const { page, title, subtitle } = Astro.props;
           </li>
           <li class="active">
             <a href="#" class="disabled">
-              <span>{subtitle}</span>
+              <span>{title}</span>
             </a>
           </li>
         </ol>
@@ -44,7 +44,11 @@ const { page, title, subtitle } = Astro.props;
 
             <div class="aside__accordions" data-accordion="single">
               <Accordion title="Логика" active={page == 2}>
-                <ul>
+                <ul
+                  style="--primary: rgb(254, 92, 148);
+                --primary-hover:rgba(254, 92, 148,0.2);
+             --primary-light:rgba(254, 92, 148,0.1);"
+                >
                   <li>
                     <a href="/exercises/logics/high-and-low">Югары һәм түбән</a>
                   </li>
@@ -59,13 +63,26 @@ const { page, title, subtitle } = Astro.props;
                 </ul>
               </Accordion>
               <Accordion title="Уку Һәм грамота" active={page == 3}>
-                <ul>
-                  <li><a href="#">Югары һәм түбән</a></li>
-                  <li><a href="#">Каты һәм йомшак</a></li>
-                  <li><a href="#">Өстәмә рәт</a></li>
-                  <li><a href="#">Югалтулар</a></li>
-                  <li><a href="#">Салкын Һәм кайнар</a></li>
-                  <li><a href="#">Рәсемне җый</a></li>
+                <ul
+                  style="--primary:rgb(148, 136, 61);
+                     --primary-hover:rgba(253, 233, 206,0.8);
+                  --primary-light:rgba(253, 233, 206,0.4);"
+                >
+                  <li>
+                    <a href="/exercises/grammar/purity-of-speech"
+                      >Сөйләм сафлыгы</a
+                    >
+                  </li>
+                  <li><a href="/exercises/grammar/alphabet">Әлифба</a></li>
+                  <li>
+                    <a href="/exercises/grammar/choose-a-letter"
+                      >Хәрефне сайла</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/exercises/grammar/work-with-letters"
+                      >Хәрефләр белән эш</a>
+                  </li>
                 </ul>
               </Accordion>
               <Accordion title="Санарга өйрәнәбез" active={page == 4}>
@@ -112,7 +129,7 @@ const { page, title, subtitle } = Astro.props;
           </div>
 
           <div class="content">
-            <div class="content-title">{title}</div>
+            <div class="content-title">Күнегү "{title}"</div>
 
             <div class="card">
               <div class="card-title">{subtitle}</div>
