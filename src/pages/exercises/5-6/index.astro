@@ -1,9 +1,9 @@
 ---
 import App from "../../../App.astro";
-import { Section, Accordion, Image, Icon, H1, H2, H3, H4 } from "ui";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
 ---
 
-<App title="Күнегү Югары һәм түбән">
+<App title="Главная">
   <main>
     <!-- Intro -->
     <Section name="intro">
@@ -15,143 +15,196 @@ import { Section, Accordion, Image, Icon, H1, H2, H3, H4 } from "ui";
           <li>
             <a href="#"><span>Күнегүләр</span></a>
           </li>
-          <li>
-            <a href="#"><span>5 - 6 яшь</span></a>
-          </li>
           <li class="active">
             <a href="#" class="disabled">
-              <span>Югары һәм түбән</span>
+              <span>5 - 6 яшь</span>
             </a>
           </li>
         </ol>
       </div>
 
-      <div class="page page-2">
-        <div class="wrapper">
-          <div class="aside">
-            <div class="aside__section">
-              <div class="aside__section-title">5 - 6 яшь</div>
-              <Image src="page-2/section.png" />
-            </div>
+      <div class="page page-1">
+        <H1>5 - 6 яшь</H1>
 
-            <div class="aside__accordions" data-accordion="single">
-              <Accordion title="Логика" active>
-                <ul>
-                  <li><a href="#">Югары һәм түбән</a></li>
-                  <li><a href="#">Каты һәм йомшак</a></li>
-                  <li><a href="#">Өстәмә рәт</a></li>
-                  <li><a href="#">Югалтулар</a></li>
-                  <li><a href="#">Салкын Һәм кайнар</a></li>
-                  <li><a href="#">Рәсемне җый</a></li>
-                </ul>
-              </Accordion>
-              <Accordion title="Уку Һәм грамота">
-                <ul>
-                  <li><a href="#">Югары һәм түбән</a></li>
-                  <li><a href="#">Каты һәм йомшак</a></li>
-                  <li><a href="#">Өстәмә рәт</a></li>
-                  <li><a href="#">Югалтулар</a></li>
-                  <li><a href="#">Салкын Һәм кайнар</a></li>
-                  <li><a href="#">Рәсемне җый</a></li>
-                </ul>
-              </Accordion>
-              <Accordion title="Санарга өйрәнәбез">
-                <ul>
-                  <li><a href="#">Югары һәм түбән</a></li>
-                  <li><a href="#">Каты һәм йомшак</a></li>
-                  <li><a href="#">Өстәмә рәт</a></li>
-                  <li><a href="#">Югалтулар</a></li>
-                  <li><a href="#">Салкын Һәм кайнар</a></li>
-                  <li><a href="#">Рәсемне җый</a></li>
-                </ul>
-              </Accordion>
-              <Accordion title="Игътибар һәм хәтер">
-                <ul>
-                  <li><a href="#">Югары һәм түбән</a></li>
-                  <li><a href="#">Каты һәм йомшак</a></li>
-                  <li><a href="#">Өстәмә рәт</a></li>
-                  <li><a href="#">Югалтулар</a></li>
-                  <li><a href="#">Салкын Һәм кайнар</a></li>
-                  <li><a href="#">Рәсемне җый</a></li>
-                </ul>
-              </Accordion>
-              <Accordion title="Төсләр">
-                <ul>
-                  <li><a href="#">Югары һәм түбән</a></li>
-                  <li><a href="#">Каты һәм йомшак</a></li>
-                  <li><a href="#">Өстәмә рәт</a></li>
-                  <li><a href="#">Югалтулар</a></li>
-                  <li><a href="#">Салкын Һәм кайнар</a></li>
-                  <li><a href="#">Рәсемне җый</a></li>
-                </ul>
-              </Accordion>
-              <Accordion title="Логопедик биремнәр">
-                <ul>
-                  <li><a href="#">Югары һәм түбән</a></li>
-                  <li><a href="#">Каты һәм йомшак</a></li>
-                  <li><a href="#">Өстәмә рәт</a></li>
-                  <li><a href="#">Югалтулар</a></li>
-                  <li><a href="#">Салкын Һәм кайнар</a></li>
-                  <li><a href="#">Рәсемне җый</a></li>
-                </ul>
-              </Accordion>
+        <div class="sections">
+          <div class="sections__item">
+            <div class="sections__item-title">Логика</div>
+            <div class="list">
+              <a href="/exercises/logics/high-and-low" class="list-item">
+                <Image src="page-1/1.png" />
+                <span>Югары <br /> һәм түбән</span>
+              </a>
+              <a href="/exercises/logics/hard-and-soft" class="list-item">
+                <Image src="page-1/2.png" />
+                <span>Каты <br /> һәм йомшак</span>
+              </a>
+              <a href="/exercises/logics/extra-row" class="list-item">
+                <Image src="page-1/3.png" />
+                <span>Өстәмә <br /> рәт</span>
+              </a>
+              <a href="/exercises/logics/losses" class="list-item">
+                <Image src="page-1/4.png" />
+                <span>Югалтулар</span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/5.png" />
+                <span
+                  >Салкын <br />
+                  Һәм кайнар
+                </span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/6.png" />
+                <span>Рәсемне җый</span>
+              </a>
             </div>
           </div>
 
-          <div class="content">
-            <div class="content-title">Күнегү "Югары һәм түбән"</div>
-
-            <div class="card">
-              <div class="card-title">Зур әйберне сайла</div>
-
-              <div class="card__list">
-                <div class="card__list-item">
-                  <Image src="page-2/1.svg" />
-                </div>
-                <div class="card__list-item">
-                  <Image src="page-2/2.png" />
-                </div>
-                <div class="card__list-item">
-                  <Image src="page-2/3.png" />
-                </div>
-              </div>
-
-              <a href="#" class="btn">Дәвам итәргә</a>
+          <div class="sections__item">
+            <div class="sections__item-title">Уку Һәм грамота</div>
+            <div class="list">
+              <a href="#" class="list-item">
+                <Image src="page-1/7.png" />
+                <span>лифба ә </span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/8.png" />
+                <span
+                  >Cөйләм <br />
+                  сафлыгы</span
+                >
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/9.png" />
+                <span>Хәрефне сайла </span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/10.png" />
+                <span
+                  >Хәрефләр
+                  <br />
+                  белән эш</span
+                >
+              </a>
             </div>
           </div>
 
-          <div class="result">
-            <div class="result__level">
-              <div class="result__level-title">Дәрәҗә</div>
-              <div class="flex-row">
-                <Image src="icons/star-filled.png" />
-                <Image src="icons/star-empty.png" />
-                <Image src="icons/star-empty.png" />
-              </div>
+          <div class="sections__item">
+            <div class="sections__item-title">Санарга өйрәнәбез</div>
+            <div class="list">
+              <a href="#" class="list-item">
+                <Image src="page-1/11.png" />
+                <span
+                  >Хайваннарны
+                  <br /> саныйбыз</span
+                >
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/12.png" />
+                <span>Күңелле <br />исәп</span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/13.png" />
+                <span>Предметларны <br /> саныйбыз</span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/14.png" />
+                <span>1 - 3 саннарын <br />өйрәнәбез</span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/15.png" />
+                <span
+                  >5 кадәр <br />
+                  саныйбыз
+                </span>
+              </a>
             </div>
+          </div>
 
-            <div class="result__actions">
-              <Image src="icons/sound.svg" />
-              <Image src="icons/play.png" />
+          <div class="sections__item">
+            <div class="sections__item-title">Игътибар һәм хәтер</div>
+            <div class="list">
+              <a href="#" class="list-item">
+                <Image src="page-1/16.png" />
+                <span>Күләгәне <br /> тап</span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/17.png" />
+                <span>Парны <br /> тап</span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/18.png" />
+                <span
+                  >Бала һәм
+                  <br /> әни</span
+                >
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/19.png" />
+                <span>Нәрсә <br /> авыррак?</span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/20.png" />
+                <span
+                  >Нәрсә
+                  <br />
+                  артык?
+                </span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/21.png" />
+                <span>Бертөрле <br /> предметлар</span>
+              </a>
             </div>
+          </div>
 
-            <div class="result__table">
-              <table>
-                <tr>
-                  <th colspan="2">Җаваплар</th>
-                </tr>
-                <tr>
-                  <td><Image src="icons/correct.svg" /></td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <td><Image src="icons/wrong.svg" /></td>
-                  <td><span class="false">0</span></td>
-                </tr>
-              </table>
+          <div class="sections__item">
+            <div class="sections__item-title">Төсләр</div>
+            <div class="list">
+              <a href="#" class="list-item">
+                <Image src="page-1/22.png" />
+                <span>Төсләрне <br /> өйрәнәбез</span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/23.png" />
+                <span>Рәсемне <br />буяу</span>
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/24.png" />
+                <span>Төсле һәм <br /> кара-ак</span>
+              </a>
             </div>
+          </div>
 
-            <Image class="result__image" src="aside.png" />
+          <div class="sections__item">
+            <div class="sections__item-title">Логопедик биремнәр</div>
+            <div class="list">
+              <a href="#" class="list-item">
+                <Image src="page-1/25.png" />
+                <span
+                  >Иҗекләрне <br />
+                  кабатла - <br />
+
+                  “C” авазы</span
+                >
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/26.png" />
+                <span
+                  >Бармагың <br />
+                  белән үткәр - <br />
+                  “З” авазы</span
+                >
+              </a>
+              <a href="#" class="list-item">
+                <Image src="page-1/27.png" />
+                <span>
+                  Фонематик <br />
+                  ишетү - <br />
+                  “Р” авазы
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

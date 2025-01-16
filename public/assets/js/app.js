@@ -1,3 +1,5 @@
+const isAdmin = sessionStorage.getItem("is-admin") || "false";
+
 const startSection = document.querySelector(".start");
 if (startSection) {
   const startText = startSection.querySelector(".start__text");
@@ -13,6 +15,20 @@ if (startSection) {
 
       option.classList.add("active");
 
+      if (option.textContent == "Мәгариф идарәсе") {
+        sessionStorage.setItem("is-admin", true);
+
+        const menuItems = document.querySelectorAll(
+          ".header__menu .header__menu-item"
+        );
+        let lastChild = menuItems[menuItems.length - 1];
+        let a = lastChild.querySelector("a");
+
+        a.href = "/stats/general";
+      } else {
+        sessionStorage.setItem("is-admin", false);
+      }
+
       setTimeout(() => {
         startSelect.style.display = "none";
         startText.style.display = "flex";
@@ -24,6 +40,28 @@ if (startSection) {
   btnText.addEventListener("click", () => {
     startText.style.display = "none";
     startSelect.style.display = "flex";
+  });
+}
+
+// Header
+const header = document.querySelector(".header");
+if (header) {
+  const menuItems = header.querySelectorAll(".header__menu .header__menu-item");
+  const name = header.querySelector(".header__name");
+  const author = header.querySelector(".header__author");
+  const idara = header.querySelector(".header__idara");
+
+  if (isAdmin == "true" && idara) {
+    idara.style.display = "flex";
+    name.style.display = "none";
+    author.style.display = "none";
+  }
+
+  menuItems.forEach((item) => {
+    const a = item.querySelector("a");
+
+    const isActive = a.href == window.location.href;
+    isActive && item.classList.add("active");
   });
 }
 

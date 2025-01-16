@@ -1,0 +1,163 @@
+---
+import App from "../App.astro";
+import { Section, Accordion, Image, Icon, H1, H2, H3, H4 } from "ui";
+
+interface Props {
+  page: number;
+  title: string;
+  subtitle: string;
+}
+
+const { page, title, subtitle } = Astro.props;
+---
+
+<App title={title}>
+  <main>
+    <!-- Intro -->
+    <Section name="intro">
+      <div class="breadcrumb">
+        <ol class="breadcrumb-list">
+          <li>
+            <a href="/"><span>Баш</span></a>
+          </li>
+          <li>
+            <a href="/exercises"><span>Күнегүләр</span></a>
+          </li>
+          <li>
+            <a href="/exercises/5-6"><span>5 - 6 яшь</span></a>
+          </li>
+          <li class="active">
+            <a href="#" class="disabled">
+              <span>{subtitle}</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+
+      <div class="page" class:list={[`page-${page}`]}>
+        <div class="wrapper">
+          <div class="aside">
+            <div class="aside__section">
+              <div class="aside__section-title">5 - 6 яшь</div>
+              <Image src="page-2/section.png" />
+            </div>
+
+            <div class="aside__accordions" data-accordion="single">
+              <Accordion title="Логика" active={page == 2}>
+                <ul>
+                  <li>
+                    <a href="/exercises/logics/high-and-low">Югары һәм түбән</a>
+                  </li>
+                  <li>
+                    <a href="/exercises/logics/hard-and-soft">Каты һәм йомшак</a
+                    >
+                  </li>
+                  <li><a href="/exercises/logics/extra-row">Өстәмә рәт</a></li>
+                  <li><a href="/exercises/logics/losses">Югалтулар</a></li>
+                  <li><a href="#">Салкын Һәм кайнар</a></li>
+                  <li><a href="#">Рәсемне җый</a></li>
+                </ul>
+              </Accordion>
+              <Accordion title="Уку Һәм грамота" active={page == 3}>
+                <ul>
+                  <li><a href="#">Югары һәм түбән</a></li>
+                  <li><a href="#">Каты һәм йомшак</a></li>
+                  <li><a href="#">Өстәмә рәт</a></li>
+                  <li><a href="#">Югалтулар</a></li>
+                  <li><a href="#">Салкын Һәм кайнар</a></li>
+                  <li><a href="#">Рәсемне җый</a></li>
+                </ul>
+              </Accordion>
+              <Accordion title="Санарга өйрәнәбез" active={page == 4}>
+                <ul>
+                  <li><a href="#">Югары һәм түбән</a></li>
+                  <li><a href="#">Каты һәм йомшак</a></li>
+                  <li><a href="#">Өстәмә рәт</a></li>
+                  <li><a href="#">Югалтулар</a></li>
+                  <li><a href="#">Салкын Һәм кайнар</a></li>
+                  <li><a href="#">Рәсемне җый</a></li>
+                </ul>
+              </Accordion>
+              <Accordion title="Игътибар һәм хәтер" active={page == 5}>
+                <ul>
+                  <li><a href="#">Югары һәм түбән</a></li>
+                  <li><a href="#">Каты һәм йомшак</a></li>
+                  <li><a href="#">Өстәмә рәт</a></li>
+                  <li><a href="#">Югалтулар</a></li>
+                  <li><a href="#">Салкын Һәм кайнар</a></li>
+                  <li><a href="#">Рәсемне җый</a></li>
+                </ul>
+              </Accordion>
+              <Accordion title="Төсләр" active={page == 6}>
+                <ul>
+                  <li><a href="#">Югары һәм түбән</a></li>
+                  <li><a href="#">Каты һәм йомшак</a></li>
+                  <li><a href="#">Өстәмә рәт</a></li>
+                  <li><a href="#">Югалтулар</a></li>
+                  <li><a href="#">Салкын Һәм кайнар</a></li>
+                  <li><a href="#">Рәсемне җый</a></li>
+                </ul>
+              </Accordion>
+              <Accordion title="Логопедик биремнәр" active={page == 7}>
+                <ul>
+                  <li><a href="#">Югары һәм түбән</a></li>
+                  <li><a href="#">Каты һәм йомшак</a></li>
+                  <li><a href="#">Өстәмә рәт</a></li>
+                  <li><a href="#">Югалтулар</a></li>
+                  <li><a href="#">Салкын Һәм кайнар</a></li>
+                  <li><a href="#">Рәсемне җый</a></li>
+                </ul>
+              </Accordion>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="content-title">{title}</div>
+
+            <div class="card">
+              <div class="card-title">{subtitle}</div>
+
+              <slot />
+
+              <a href="#" class="btn">Дәвам итәргә</a>
+            </div>
+          </div>
+
+          <div class="result">
+            <div class="result__level">
+              <div class="result__level-title">Дәрәҗә</div>
+              <div class="flex-row">
+                <Image src="icons/star-filled.png" />
+                <Image src="icons/star-empty.png" />
+                <Image src="icons/star-empty.png" />
+              </div>
+            </div>
+
+            <div class="result__actions">
+              <Image src="icons/sound.svg" />
+              <Image src="icons/play.png" />
+            </div>
+
+            <div class="result__table">
+              <table>
+                <tr>
+                  <th colspan="2">Җаваплар</th>
+                </tr>
+                <tr>
+                  <td><Image src="icons/correct.svg" /></td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td><Image src="icons/wrong.svg" /></td>
+                  <td><span class="false">0</span></td>
+                </tr>
+              </table>
+            </div>
+
+            <Image class="result__image" src="aside.png" />
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>
