@@ -1,0 +1,64 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+---
+
+<App title="Главная">
+  <main>
+    <!-- Intro -->
+    <Section name="intro">
+      <div class="breadcrumb">
+        <ol class="breadcrumb-list">
+          <li>
+            <a href="/"><span>Баш</span></a>
+          </li>
+          <li class="active">
+            <a href="/"><span>Уңышлар</span></a>
+          </li>
+        </ol>
+      </div>
+
+      <div class="page">
+        <div class="intro__profile">
+          <div class="intro__profile-top">
+            <div class="flex-col">
+              <H2>Шәмсетдинова Айгөл Таһир кызы</H2>
+              <H3>Балалар бакчасы тәрбиячесе</H3>
+            </div>
+
+            <Image src="avatar.png" />
+          </div>
+
+          <div class="intro__profile-table">
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="3">Достижения</th>
+                  <th>Пройдено</th>
+                  <th>Баллы</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="3">научные работы</td>
+                  <td>56</td>
+                  <td>32</td>
+                </tr>
+                <tr>
+                  <td colspan="3">научные работы</td>
+                  <td>56</td>
+                  <td>32</td>
+                </tr>
+                <tr>
+                  <td colspan="3">научные работы</td>
+                  <td>56</td>
+                  <td>32</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>

@@ -3,20 +3,16 @@ import { Section, Accordion, Image, Icon, H1, H2, H3, H4 } from "ui";
 import Exercice from "../../../components/TheExercise.astro";
 ---
 
-<Exercice
-  page={2}
-  title='Югары һәм түбән'
-  subtitle="Зур әйберне сайла"
->
-  <div class="card__list">
-    <div class="card__list-item">
+<Exercice page={2} title="Югары һәм түбән" subtitle="Зур әйберне сайла">
+  <ul class="list">
+    <li>
       <Image src="page-2/1.svg" />
-    </div>
-    <div class="card__list-item">
+    </li>
+    <li>
       <Image src="page-2/2.png" />
-    </div>
-    <div class="card__list-item">
+    </li>
+    <li>
       <Image src="page-2/3.png" />
-    </div>
-  </div>
+    </li>
+  </ul>
 </Exercice>
