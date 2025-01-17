@@ -519,6 +519,10 @@ main {
       align-items: flex-start;
       gap: 20px;
 
+      &:nth-child(1) {
+        --text-color: rgb(191, 181, 211);
+      }
+
       &:nth-child(2) {
         --text-color: rgb(255, 87, 88);
       }
@@ -1199,6 +1203,20 @@ main {
   text-align: justify;
   color: rgba(0, 0, 0, 0.3764705882);
   padding: 8px;
+}
+
+.regular-text {
+  width: 100%;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.3764705882);
+}
+
+.exercise_secondary_title {
+  width: 100%;
+  text-align: left;
+  padding: 8px 0;
+  color: rgba(0, 0, 0, 0.3764705882);
+  font-size: 20px;
 }
 
 // @include show(".endoscopy");
