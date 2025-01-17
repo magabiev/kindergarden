@@ -487,8 +487,8 @@ main {
       width: 100%;
       color: #00000060;
       font-size: 24px;
-      font-weight: 700;
       text-align: center;
+      font-family: var(--font-secondary);
       line-height: 1.35;
     }
 
@@ -513,34 +513,26 @@ main {
     grid-template-columns: repeat(2, 1fr);
     gap: 60px;
 
-    &__item {
+    &__item, &__other {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 20px;
 
-      &:nth-child(1) {
+      &:nth-child(2) {
         --text-color: rgb(255, 87, 88);
       }
 
-      &:nth-child(2) {
+      &:nth-child(3) {
         --text-color: rgb(148, 136, 61);
       }
 
-      &:nth-child(3) {
-        --text-color: rgb(0, 74, 173);
-      }
-
       &:nth-child(4) {
-        --text-color: rgb(88, 47, 142);
-      }
-
-      &:nth-child(5) {
         --text-color: rgb(21, 93, 28);
       }
 
-      &:nth-child(6) {
-        --text-color: rgb(255, 145, 77);
+      &:nth-child(5) {
+        --text-color: #b5b085;
       }
 
       &-title {
@@ -552,6 +544,16 @@ main {
         text-align: center;
         background: var(--primary);
         border-radius: 30px;
+      }
+    }
+
+    &__other {
+      &:nth-child(1) {
+        --text-color: rgb(0, 74, 173);
+      }
+
+      &:nth-child(2) {
+        --text-color: #ffb282;
       }
     }
   }
@@ -610,6 +612,21 @@ main {
 
     img {
       width: 100%;
+    }
+
+    .image_full {
+      padding: 0;
+      overflow: hidden;
+      img {
+        min-width: 130px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &:first-child img {
+        width: 100%;
+      }
     }
   }
 
@@ -1149,6 +1166,39 @@ main {
       width: 100%;
     }
   }
+}
+
+.bear_img {
+  width: 350px;
+  margin: auto;
+}
+
+.splide {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.splide-img {
+  width: 450px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+.splide__slide {
+  align-content: center;
+  align-items: center;
+}
+
+.gerb-flag-block {
+  text-align: justify;
+  font-size: 20px;
+}
+
+.gerb-flag-block-title {
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.3764705882);
+  padding: 8px;
 }
 
 // @include show(".endoscopy");
