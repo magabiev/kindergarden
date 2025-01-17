@@ -1,0 +1,162 @@
+---
+import { Section, Accordion, Image, Icon, H1, H2, H3, H4 } from 'ui';
+import Exercice from '../../../components/TheExercise.astro';
+---
+
+<Exercice
+    page={2}
+    title='Татар милли киемнәр'
+    subtitle='Әлфиягә киенергә булыш. Татар милли костюмының үзенчәлекләре турында сөйлә.'
+>
+    <b class='title'>Кызлар өчен татар костюмы.</b>
+    <span>
+        Кызлар өчен татар костюмы милли колорит тапшыра. Концерт чыгышлары,
+        иҗади конкурслар һәм тематик дәресләр өчен туры килә. Костюм баш
+        киеменнән, күлмәктән, камзулдан тора. Костюм татар орнаментлары белән
+        бизәлгән, аны татар милли бизәнү әйберләре белән тулыландырырга мөмкин.
+        Баш киеме чигүле бәрхеттән эшләнгән, пайеткалар белән бизәлгән. Баш
+        киеменең түбәннән пайеткалар белән чигүдән купон бара. Баш киемен
+        шифоннан вуаль тулыландыра.
+    </span>
+    <div class='match-container'>
+        <div class='images-container'>
+            <div class='draggable' draggable='true' data-match='1'>
+                <Image src='dressed/top.jpg' />
+            </div>
+            <div class='draggable' draggable='true' data-match='3'>
+                <Image src='dressed/bottom.jpg' />
+            </div>
+            <div class='draggable' draggable='true' data-match='2'>
+                <Image src='dressed/middle.jpg' />
+            </div>
+        </div>
+
+        <div class='dropzones-container'>
+            <div class='dropzone' data-match='1'></div>
+            <div class='dropzone' data-match='2'></div>
+            <div class='dropzone' data-match='3'></div>
+        </div>
+    </div>
+    <Image src='dressed/all-dress.jpg' class='all-dressed' />
+    <span>
+        *Искәрмә: Әлеге бирем кызыклырак рәвештә башкарылачак. Кием өлешләрен
+        кызга күчерергә һәм аны киендерергә мөмкин булачак. <br />
+        * Примечание: Данное задание будет выполнено в более интересном виде. Части
+        одежды можно будет переносить на девочку и одевать ее.
+    </span>
+    <script client>
+        document.addEventListener('DOMContentLoaded', () => {
+            const draggables = document.querySelectorAll('.draggable');
+            const dropzones = document.querySelectorAll('.dropzone');
+
+            draggables.forEach((draggable) => {
+                draggable.addEventListener('dragstart', (e) => {
+                    // Убедимся, что атрибут data-match установлен
+                    const matchId = draggable.getAttribute('data-match');
+                    if (matchId) {
+                        e.dataTransfer.setData('match', matchId);
+                    }
+                });
+            });
+
+            dropzones.forEach((dropzone) => {
+                dropzone.addEventListener('dragover', (e) => {
+                    e.preventDefault(); // Разрешаем сброс
+                });
+
+                dropzone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    const matchId = e.dataTransfer.getData('match');
+
+                    if (matchId) {
+                        if (dropzone.getAttribute('data-match') === matchId) {
+                            dropzone.classList.add('correct');
+                            const draggedElement = document.querySelector(
+                                `.draggable[data-match="${matchId}"]`
+                            );
+                            dropzone.appendChild(draggedElement); // Помещаем элемент в зону
+                        } else {
+                            dropzone.classList.add('incorrect');
+                            setTimeout(
+                                () => dropzone.classList.remove('incorrect'),
+                                1000
+                            );
+                        }
+                    } else {
+                        console.error('matchId is null or undefined');
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        .match-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .images-container,
+        .dropzones-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .draggable {
+            width: 200px;
+            /* height: 120px; */
+            cursor: grab;
+        }
+
+        .draggable img {
+            width: 100%;
+            /* height: 100%; */
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .dropzone {
+            width: 200px;
+            min-height: 50px;
+            height: min-content;
+            /* height: 120px; */
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            color: #666;
+            transition: background 0.3s;
+        }
+
+        .dropzone img {
+            width: 100%;
+            /* height: 100%; */
+            object-fit: cover;
+        }
+
+        .dropzone.correct {
+            background-color: #d4f8d4;
+            border-color: #4caf50;
+        }
+
+        .dropzone.incorrect {
+            background-color: #ffd6d6;
+            border-color: #f44336;
+        }
+
+        .all-dressed {
+            height: 280px;
+        }
+
+        .title {
+            color: rgba(0, 0, 0, 0.3764705882);
+            font-size: 20px;
+        }
+    </style>
+</Exercice>
