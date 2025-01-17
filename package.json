@@ -24,6 +24,10 @@
     "fs-extra": "^11.2.0",
     "inquirer": "^10.1.8",
     "sass": "^1.75.0",
+    "sortablejs": "^1.15.6",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/sortablejs": "^1.15.8"
   }
 }
