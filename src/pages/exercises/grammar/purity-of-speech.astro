@@ -5,26 +5,139 @@ import Exercice from "../../../components/TheExercise.astro";
 
 <Exercice
   page={3}
-  title='Сөйләм сафлыгы'
+  title="Сөйләм сафлыгы"
   subtitle="Сүзнең авазларын дөрес урнаштыр"
+  nextUrl="/exercises/artistic/draw"
 >
   <div class="purity-of-speech">
     <ul>
       <li>
-        <div class="box box--filled"></div>
+        <div class="box draggable" draggable="true" data-match="1"></div>
         <span>Т</span>
-        <div class="box"></div>
+        <div class="box dropzone" data-match="1"></div>
       </li>
       <li>
-        <div class="box box--filled"></div>
+        <div class="box draggable" draggable="true" data-match="2"></div>
         <span>у</span>
-        <div class="box"></div>
+        <div class="box dropzone" data-match="2"></div>
       </li>
       <li>
-        <div class="box box--filled"></div>
+        <div class="box draggable" draggable="true" data-match="3"></div>
         <span>п</span>
-        <div class="box"></div>
+        <div class="box dropzone" data-match="3"></div>
       </li>
     </ul>
   </div>
+
+  <script client>
+    document.addEventListener("DOMContentLoaded", () => {
+      const draggables = document.querySelectorAll(".draggable");
+      const dropzones = document.querySelectorAll(".dropzone");
+
+      draggables.forEach((draggable) => {
+        draggable.addEventListener("dragstart", (e) => {
+          const matchId = draggable.getAttribute("data-match");
+          e.dataTransfer.setData("match", matchId);
+        });
+      });
+
+      dropzones.forEach((dropzone) => {
+        dropzone.addEventListener("dragover", (e) => {
+          e.preventDefault();
+        });
+
+        dropzone.addEventListener("drop", (e) => {
+          e.preventDefault();
+          const matchId = e.dataTransfer.getData("match");
+
+          const droppedElement = document.querySelector(
+            `.draggable[data-match="${matchId}"]`
+          );
+
+          // Логика перетаскивания
+          if (matchId === "1" && dropzone.getAttribute("data-match") === "2") {
+            dropzone.appendChild(droppedElement);
+            dropzone.classList.add("correct");
+            droppedElement.style.opacity = "0"; // Делаем квадратик прозрачным
+          } else if (
+            (matchId === "2" || matchId === "3") &&
+            dropzone.getAttribute("data-match") !== "2"
+          ) {
+            dropzone.appendChild(droppedElement);
+            dropzone.classList.add("correct");
+            droppedElement.style.opacity = "0"; // Делаем квадратик прозрачным
+          } else {
+            dropzone.classList.add("incorrect");
+            setTimeout(() => dropzone.classList.remove("incorrect"), 1000);
+          }
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .purity-of-speech {
+      margin-top: 20px;
+      width: 100%;
+      min-height: 400px; /* Устанавливаем минимальную высоту для контейнера */
+    }
+
+    .purity-of-speech ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 20px;
+    }
+
+    .purity-of-speech li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .purity-of-speech .box {
+      width: 150px;
+      height: 100px;
+      border-radius: 30px;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      background: white; /* Все формы белые по умолчанию */
+    }
+
+    /* Устанавливаем цвет для перетаскиваемых элементов */
+    .purity-of-speech .draggable[data-match="1"] {
+      background: red; /* Красный */
+    }
+
+    .purity-of-speech .draggable[data-match="2"] {
+      background: rgb(0, 0, 255); /* Синий */
+    }
+
+    .purity-of-speech .draggable[data-match="3"] {
+      background: rgb(0, 0, 255); /* Синий */
+    }
+
+    /* Стили для формы (dropzone) */
+    .purity-of-speech .dropzone {
+      background: white; /* Белый цвет для формы */
+    }
+
+    .purity-of-speech span {
+      margin-top: 60px;
+      color: var(--primary);
+      font-size: 64px; /* Размер букв для Т, У, П */
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Стиль для правильных и неправильных действий */
+    .purity-of-speech .correct {
+      background-color: #d4f8d4;
+      border-color: #4caf50;
+    }
+
+    .purity-of-speech .incorrect {
+      background-color: #ffd6d6;
+      border-color: #f44336;
+    }
+  </style>
 </Exercice>

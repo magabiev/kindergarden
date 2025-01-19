@@ -6,9 +6,10 @@ interface Props {
   page: number;
   title: string;
   subtitle: string;
+  nextUrl?: string;
 }
 
-const { page, title, subtitle } = Astro.props;
+const { page, title, subtitle, nextUrl = '#' } = Astro.props;
 ---
 
 <App title={title}>
@@ -139,7 +140,7 @@ const { page, title, subtitle } = Astro.props;
 
               <slot />
 
-              <a href="#" class="btn">Дәвам итәргә</a>
+              <a href={nextUrl} class="btn">Дәвам итәргә</a>
             </div>
           </div>
 

@@ -1,0 +1,27 @@
+---
+import { Section, Accordion, Image, Icon, H1, H2, H3, H4 } from "ui";
+import Exercice from "../../../components/TheExercise.astro";
+---
+
+<Exercice
+  page={2}
+  title="Предметларны саныйбыз"
+  subtitle="Уенчыкларның санын сана"
+>
+  <div class="sum">
+    <div>
+      <Image src="page-2/animals.png" />
+    </div>
+
+    <div class="span">
+      <span>Җавап өчен вариантлар:</span>
+    </div>
+
+    <ul class="answers">
+      <li class="highAndLow">1</li>
+      <li class="highAndLow">5</li>
+      <li class="highAndLow">10</li>
+      <li class="highAndLow">7</li>
+    </ul>
+  </div>
+</Exercice>
