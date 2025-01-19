@@ -1,12 +1,20 @@
 ---
 import { Section, Accordion, Image, Icon, H1, H2, H3, H4 } from "ui";
 import Exercice from "../../../components/TheExercise.astro";
+
+const RIGHT_ANSWER = 1;
+let choosed = 0;
+
+function choose(num) {
+  choosed = num;
+}
 ---
 
 <Exercice
   page={2}
   title="Өстәмә рәт"
   subtitle="Уң якта нинди рәсем <br/> булырга тиеш?"
+  nextUrl="/exercises/logics/losses"
 >
   <div class="extra-row">
     <ul class="top">
@@ -35,13 +43,13 @@ import Exercice from "../../../components/TheExercise.astro";
     <span>Җавап өчен вариантлар:</span>
 
     <ul class="answers">
-      <li>
+      <li class="highAndLow">
         <Image src="page-2/7.png" />
       </li>
-      <li>
+      <li class="highAndLow">
         <Image src="page-2/8.png" />
       </li>
-      <li>
+      <li class="highAndLow">
         <Image src="page-2/9.png" />
       </li>
     </ul>

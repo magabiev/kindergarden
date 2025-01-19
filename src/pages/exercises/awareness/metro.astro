@@ -8,11 +8,18 @@ import '@splidejs/splide/css';
     page={2}
     title='Метро станцияләре'
     subtitle='Син кайчан да булса Казан метросында булдыңмы? Рәсемнәрдә нинди метро станциясе сурәтләнгән? Ничек атала ул? Бу метро станциясе турында сөйлә.'
+    nextUrl='/exercises/logics/high-and-low'
 >
     <div class='answers'>
         <div class='splide'>
             <div class='splide__track'>
                 <ul class='splide__list'>
+                    <li class='splide__slide'>
+                        <Image
+                            class='splide-img'
+                            src='metro/160529-1114027.jpg'
+                        />
+                    </li>
                     <li class='splide__slide'>
                         <Image
                             class='splide-img'
@@ -112,12 +119,6 @@ import '@splidejs/splide/css';
                     <li class='splide__slide'>
                         <Image
                             class='splide-img'
-                            src='metro/160529-1114027.jpg'
-                        />
-                    </li>
-                    <li class='splide__slide'>
-                        <Image
-                            class='splide-img'
                             src='metro/160529-1114033.jpg'
                         />
                     </li>
@@ -161,7 +162,7 @@ import '@splidejs/splide/css';
             }
         </script>
     </div>
-    <span>
+    <span class="description">
         Станция "Тукай Метро" дип атала һәм Казан үзәгендә урнашкан. Ул атаклы
         татар шагыйре Габдулла Тукай хөрмәтенә аталган. Бу станциянең бай
         бизәлеше аның иҗатына багышланган. Юл диварларында аның танылган

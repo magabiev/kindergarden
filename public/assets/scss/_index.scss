@@ -513,7 +513,8 @@ main {
     grid-template-columns: repeat(2, 1fr);
     gap: 60px;
 
-    &__item, &__other {
+    &__item,
+    &__other {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -592,6 +593,81 @@ main {
 }
 
 .page-2 {
+  .sum {
+    .answers {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 40px;
+
+      li {
+        padding: 10px;
+        height: 100px;
+        width: 100px;
+        border: 2px solid rgba($color: #000000, $alpha: 0.1);
+        border-radius: 30px;
+        cursor: pointer;
+        overflow: hidden;
+        font-size: 50px;
+        color: rgb(88, 183, 112);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .span {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: rgba($color: #000000, $alpha: 0.6);
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  .howmuch {
+    .container_images {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .answers {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 20px;
+
+      li {
+        padding: 10px;
+        height: 200px;
+        width: 160px;
+        border: 2px solid rgba($color: #000000, $alpha: 0.1);
+        border-radius: 30px;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: scale(130%);
+      }
+    }
+
+    .span {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: rgba($color: #000000, $alpha: 0.6);
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
   .list {
     margin-top: 10px;
     width: 100%;
@@ -608,10 +684,15 @@ main {
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
 
       &:first-child img {
         width: 90%;
       }
+    }
+
+    li:hover {
+      background-color: rgb(233, 233, 233);
     }
 
     img {
@@ -1194,6 +1275,15 @@ main {
   align-items: center;
 }
 
+.description {
+  text-align: justify;
+}
+
+.highAndLow:hover {
+  border: 2px solid rgb(88, 183, 112) !important;
+  background-color: transparent !important;
+}
+
 .gerb-flag-block {
   text-align: justify;
   font-size: 20px;
@@ -1225,6 +1315,10 @@ main {
   width: 600px;
 }
 
+.cat_image img {
+  padding: 20px;
+}
+
 .spot {
   position: absolute;
   width: 20px;
@@ -1254,7 +1348,7 @@ main {
     opacity: 0;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 100%;
       left: 50%;
